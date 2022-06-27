@@ -69,9 +69,13 @@ nnoremap <leader>dv <cmd>DiffviewOpen<cr>
 "-----------------------
 " LSP
 "-----------------------
-" Auto formatting
-autocmd BufWritePre,InsertLeave * typescript vim.lsp.buf.formatting_sync()
-
 lua << EOF
 require'lspconfig'.tsserver.setup{}
+EOF
+
+"----------------------
+" Other Setup
+"---------------------
+lua << EOF
+require('lualine').setup()
 EOF
