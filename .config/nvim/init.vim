@@ -30,5 +30,14 @@ call plug#begin(data_dir . '/plugins')
 
 source ~/.config/nvim/plugins/one_dark.vim
 source ~/.config/nvim/plugins/vim_gitgutter.vim
+source ~/.config/nvim/plugins/nerdtree.vim
+source ~/.config/nvim/plugins/auto_pairs.vim
+
+" Must be included last
+source ~/.config/nvim/plugins/devicons.vim
 
 call plug#end()
+
+"-----------------------
+" Mappings
+"-----------------------
