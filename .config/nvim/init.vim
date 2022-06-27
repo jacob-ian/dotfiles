@@ -12,7 +12,7 @@ set ignorecase
 set smartcase
 set noswapfile
 set incsearch
-set scrolloff=8
+set scrolloff=16
 set signcolumn=yes:1
 syntax enable
 
@@ -54,6 +54,9 @@ let mapleader = " "
 " LSP Related Maps"
 nnoremap <leader>gd <cmd>vim.lsp.buf.implementation()<cr>
 
+" NERDTree
+nnoremap <leader>n <cmd>NERDTreeToggle<cr>
+
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -66,6 +69,9 @@ nnoremap <leader>dv <cmd>DiffviewOpen<cr>
 "-----------------------
 " LSP
 "-----------------------
+" Auto formatting
+autocmd BufWritePre,InsertLeave * typescript vim.lsp.buf.formatting_sync()
+
 lua << EOF
 require'lspconfig'.tsserver.setup{}
 EOF
