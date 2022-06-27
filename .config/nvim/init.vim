@@ -58,7 +58,7 @@ nnoremap <leader>gd <cmd>vim.lsp.buf.implementation()<cr>
 nnoremap <leader>n <cmd>NERDTreeToggle<cr>
 
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
