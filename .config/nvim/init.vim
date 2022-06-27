@@ -29,6 +29,7 @@ endif
 call plug#begin(data_dir . '/plugins')
 
 source ~/.config/nvim/plugins/nvim_lspconfig.vim
+source ~/.config/nvim/plugins/nvim_cmp.vim
 source ~/.config/nvim/plugins/plenary.vim
 source ~/.config/nvim/plugins/treesitter.vim
 source ~/.config/nvim/plugins/telescope.vim
@@ -52,7 +53,14 @@ colorscheme onedark
 let mapleader = " "
 
 " LSP Related Maps"
-nnoremap <leader>gd <cmd>vim.lsp.buf.implementation()<cr>
+nnoremap <leader>li <cmd>lua vim.lsp.buf.implementation()<cr>
+nnoremap <leader>ld <cmd>lua vim.lsp.buf.definition()<cr>
+nnoremap <leader>lrn <cmd>lua vim.lsp.buf.rename()<cr>
+nnoremap <leader>lrr <cmd>lua vim.lsp.buf.references()<cr>
+nnoremap <leader>lh <cmd>lua vim.lsp.buf.hover()<cr>
+nnoremap <leader>lsh <cmd>lua vim.lsp.buf.signature_help()<cr>
+nnoremap <leader>lsd <cmd>lua vim.lsp.util.show_line_diagnostics()<cr>
+nnoremap <leader>la <cmd>lua vim.lsp.buf.code_action()<cr>
 
 " NERDTree
 nnoremap <leader>n <cmd>NERDTreeToggle<cr>
@@ -69,13 +77,16 @@ nnoremap <leader>dv <cmd>DiffviewOpen<cr>
 "-----------------------
 " LSP
 "-----------------------
-lua << EOF
-require'lspconfig'.tsserver.setup{}
-EOF
+source ~/.config/nvim/lsp.vim
 
 "----------------------
 " Other Setup
 "---------------------
 lua << EOF
 require('lualine').setup()
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  },
+}
 EOF
