@@ -31,6 +31,7 @@ call plug#begin(data_dir . '/plugins')
 source ~/.config/nvim/plugins/nvim_lspconfig.vim
 source ~/.config/nvim/plugins/nvim_cmp.vim
 source ~/.config/nvim/plugins/plenary.vim
+source ~/.config/nvim/plugins/null_ls.vim
 source ~/.config/nvim/plugins/treesitter.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/vim_gitgutter.vim
@@ -63,6 +64,7 @@ nnoremap <leader>lh <cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap <leader>lsh <cmd>lua vim.lsp.buf.signature_help()<cr>
 nnoremap <leader>lsd <cmd>lua vim.lsp.util.show_line_diagnostics()<cr>
 nnoremap <leader>la <cmd>lua vim.lsp.buf.code_action()<cr>
+nnoremap <leader>lfm <cmd>lua vim.lsp.buf.formatting_sync(nil, 1000)<cr>
 
 " NERDTree
 nnoremap <leader>n <cmd>NERDTreeToggle<cr>
@@ -77,6 +79,11 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>dvo <cmd>DiffviewOpen<cr>
 nnoremap <leader>dvc <cmd>DiffviewOpen<cr>
 nnoremap <leader>dvr <cmd>DiffviewRefresh<cr>
+
+"-----------------------
+" Autocommands
+"-----------------------
+autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
 
 "-----------------------
 " LSP
