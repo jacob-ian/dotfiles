@@ -80,6 +80,9 @@ nnoremap <leader>dvo <cmd>DiffviewOpen<cr>
 nnoremap <leader>dvc <cmd>DiffviewOpen<cr>
 nnoremap <leader>dvr <cmd>DiffviewRefresh<cr>
 
+"Other
+nnoremap <leader>gf :e <cfile><cr>
+
 "-----------------------
 " Autocommands
 "-----------------------
