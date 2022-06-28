@@ -40,6 +40,7 @@ source ~/.config/nvim/plugins/lualine.vim
 source ~/.config/nvim/plugins/one_dark.vim
 source ~/.config/nvim/plugins/diffview.vim
 source ~/.config/nvim/plugins/dashboard.vim
+source ~/.config/nvim/plugins/git_blame.vim
 
 " Must be included last
 source ~/.config/nvim/plugins/devicons.vim
@@ -76,6 +77,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>dvo <cmd>DiffviewOpen<cr>
 nnoremap <leader>dvc <cmd>DiffviewOpen<cr>
 nnoremap <leader>dvr <cmd>DiffviewRefresh<cr>
+
 "-----------------------
 " LSP
 "-----------------------
