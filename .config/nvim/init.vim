@@ -91,7 +91,9 @@ autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
 "-----------------------
 " LSP
 "-----------------------
-source ~/.config/nvim/lsp.vim
+source ~/.config/nvim/lsp/init.vim
+source ~/.config/nvim/lsp/go.vim
+source ~/.config/nvim/lsp/typescript.vim
 
 "----------------------
 " Other Setup
@@ -99,6 +101,27 @@ source ~/.config/nvim/lsp.vim
 lua << EOF
 require('lualine').setup()
 require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    "typescript",
+    "javascript",
+    "jsonc",
+    "markdown",
+    "tsx",
+    "yaml",
+    "bash",
+    "comment",
+    "css",
+    "dockerfile",
+    "go",
+    "graphql",
+    "html",
+    "jsdoc",
+    "lua",
+    "php",
+    "python",
+    "regex",
+    "scss",
+  },
   highlight = {
     enable = true,
   },
