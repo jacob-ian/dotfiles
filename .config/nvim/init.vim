@@ -39,6 +39,7 @@ source ~/.config/nvim/plugins/auto_pairs.vim
 source ~/.config/nvim/plugins/lualine.vim
 source ~/.config/nvim/plugins/one_dark.vim
 source ~/.config/nvim/plugins/diffview.vim
+source ~/.config/nvim/plugins/dashboard.vim
 
 " Must be included last
 source ~/.config/nvim/plugins/devicons.vim
@@ -72,8 +73,9 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " DiffView
-nnoremap <leader>dv <cmd>DiffviewOpen<cr>
-
+nnoremap <leader>dvo <cmd>DiffviewOpen<cr>
+nnoremap <leader>dvc <cmd>DiffviewOpen<cr>
+nnoremap <leader>dvr <cmd>DiffviewRefresh<cr>
 "-----------------------
 " LSP
 "-----------------------
