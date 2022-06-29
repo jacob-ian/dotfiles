@@ -66,6 +66,9 @@ nnoremap <leader>lsh <cmd>lua vim.lsp.buf.signature_help()<cr>
 nnoremap <leader>lsd <cmd>lua vim.lsp.util.show_line_diagnostics()<cr>
 nnoremap <leader>la <cmd>lua vim.lsp.buf.code_action()<cr>
 nnoremap <leader>lfm <cmd>lua vim.lsp.buf.formatting_sync(nil, 1000)<cr>
+nnoremap <leader>do <cmd>lua vim.diagnostic.open_float()<cr>
+nnoremap <leader>d[ <cmd>lua vim.diagnostic.goto_prev()<cr>
+nnoremap <leader>d] <cmd>lua vim.diagnostic.goto_next()<cr>
 
 " NERDTree
 nnoremap <leader>n <cmd>NERDTreeToggle<cr>
