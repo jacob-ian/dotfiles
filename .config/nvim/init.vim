@@ -1,6 +1,7 @@
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
+set autoindent
 set smartindent
 set hidden
 set number
@@ -131,6 +132,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 require('telescope').setup {
-    defaults = { file_ignore_patterns = { "node_modules" } }
+    defaults = { file_ignore_patterns = { "node_modules", ".git" } }
 }
 EOF
