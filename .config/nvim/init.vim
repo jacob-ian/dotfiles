@@ -99,6 +99,7 @@ autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
 source ~/.config/nvim/lsp/init.vim
 source ~/.config/nvim/lsp/go.vim
 source ~/.config/nvim/lsp/typescript.vim
+source ~/.config/nvim/lsp/tailwindcss.vim
 
 "----------------------
 " Other Setup
