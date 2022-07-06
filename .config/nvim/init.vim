@@ -79,7 +79,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " DiffView
 nnoremap <leader>dvo <cmd>DiffviewOpen<cr>
-nnoremap <leader>dvc <cmd>DiffviewOpen<cr>
+nnoremap <leader>dvc <cmd>DiffviewClose<cr>
 nnoremap <leader>dvr <cmd>DiffviewRefresh<cr>
 
 "Other
