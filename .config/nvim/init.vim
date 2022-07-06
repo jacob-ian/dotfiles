@@ -36,21 +36,18 @@ source ~/.config/nvim/plugins/null_ls.vim
 source ~/.config/nvim/plugins/treesitter.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/vim_gitgutter.vim
-source ~/.config/nvim/plugins/nerdtree.vim
 source ~/.config/nvim/plugins/auto_pairs.vim
 source ~/.config/nvim/plugins/lualine.vim
-source ~/.config/nvim/plugins/one_dark.vim
 source ~/.config/nvim/plugins/diffview.vim
 source ~/.config/nvim/plugins/dashboard.vim
 source ~/.config/nvim/plugins/git_blame.vim
-source ~/.config/nvim/plugins/nerdtree_git.vim
-
-" Must be included last
 source ~/.config/nvim/plugins/devicons.vim
+source ~/.config/nvim/plugins/nvimtree.vim
+source ~/.config/nvim/plugins/onenord.vim
 
 call plug#end()
 
-colorscheme onedark
+colorscheme onenord 
 
 "-----------------------
 " Mappings
@@ -71,8 +68,8 @@ nnoremap <leader>do <cmd>lua vim.diagnostic.open_float()<cr>
 nnoremap <leader>d[ <cmd>lua vim.diagnostic.goto_prev()<cr>
 nnoremap <leader>d] <cmd>lua vim.diagnostic.goto_next()<cr>
 
-" NERDTree
-nnoremap <leader>n <cmd>NERDTreeToggle<cr>
+" nvim-tree
+nnoremap <leader>n <cmd>NvimTreeToggle<cr>
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
@@ -131,8 +128,29 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
   },
+  indent = {
+      enable = true,
+  },
 }
+require'nvim-autopairs'.setup({
+    check_ts = true
+})
 require('telescope').setup {
-    defaults = { file_ignore_patterns = { "node_modules", ".git" } }
+    defaults = { file_ignore_patterns = { "node_modules", ".git/" } }
+}
+require("nvim-tree").setup {
+    renderer = {
+        icons = {
+            webdev_colors = true
+        },
+    },
+    filters = {
+        dotfiles = false,
+        custom = { ".git", "node_modules" },
+        exclude ={ ".gitignore" }
+    },
+    git = {
+        ignore = false
+    }
 }
 EOF
