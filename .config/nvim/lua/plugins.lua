@@ -44,7 +44,11 @@ return require("packer").startup(function(use)
 				git = {
 					ignore = false,
 				},
-				quit_on_open = true,
+				actions = {
+					open_file = {
+						quit_on_open = true,
+					},
+				},
 			})
 		end,
 	})
@@ -231,7 +235,12 @@ return require("packer").startup(function(use)
 	})
 
 	-- Git Helpers
-	use("airblade/vim-gitgutter")
+	use({
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup({})
+		end,
+	})
 	use("f-person/git-blame.nvim")
 	use("sindrets/diffview.nvim")
 
