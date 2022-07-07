@@ -158,6 +158,12 @@ return require("packer").startup(function(use)
 					},
 				},
 			})
+			lspconfig.html.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.jsonls.setup({
+				capabilities = capabilities,
+			})
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
 				cmd = { "gopls", "serve" },
@@ -238,10 +244,15 @@ return require("packer").startup(function(use)
 	use({
 		"lewis6991/gitsigns.nvim",
 		config = function()
-			require("gitsigns").setup({})
+			require("gitsigns").setup({
+				current_line_blame = true,
+				current_line_blame_opts = {
+					virt_text_pos = "right_align",
+					delay = 500,
+				},
+			})
 		end,
 	})
-	use("f-person/git-blame.nvim")
 	use("sindrets/diffview.nvim")
 
 	if packer_bootstrap then
