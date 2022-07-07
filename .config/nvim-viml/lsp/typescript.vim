@@ -2,12 +2,8 @@ lua << EOF
   -- Formatting with null-ls
   require('null-ls').setup({
     sources = {
-        require('null-ls').builtins.formatting.prettier.with({
-            prefer_local = "node_modules/.bin"
-        }),
-        require('null-ls').builtins.code_actions.eslint.with({
-            prefer_local = "node_modules/.bin"
-        }),
+        require('null-ls').builtins.formatting.prettierd,
+        require('null-ls').builtins.code_actions.eslint_d,
     },
   })
 

@@ -15,6 +15,7 @@ set noswapfile
 set incsearch
 set scrolloff=16
 set signcolumn=yes:1
+set nowrap
 syntax enable
 
 "--------------------------
