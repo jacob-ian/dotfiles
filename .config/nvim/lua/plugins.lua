@@ -44,6 +44,7 @@ return require("packer").startup(function(use)
 				git = {
 					ignore = false,
 				},
+				quit_on_open = true,
 			})
 		end,
 	})
